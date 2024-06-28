@@ -23,7 +23,7 @@ function DisplayBooks(){
 
   myLibrary.forEach((book, index) => {
     const card = document.createElement("div");
-    card.className = `card-${index}`;
+    card.className = `card`;
 
     const title = document.createElement("h2");
     const author = document.createElement("p");
@@ -31,9 +31,9 @@ function DisplayBooks(){
     const read = document.createElement("p");
 
     title.textContent = `${book.title}`;
-    author.textContent = `${book.author}`;
-    pages.textContent = `${book.pages}`;
-    read.textContent = `${book.read ? "Already Finished":"Haven't read yet"}`;
+    author.textContent = `Author: ${book.author}`;
+    pages.textContent = `Pages: ${book.pages}`;
+    read.textContent = `Status: ${book.read ? "Finished":""}`;
 
     card.append(title);
     card.append(author);
