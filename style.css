@@ -1,0 +1,24 @@
+:root {
+  --color-60: #114232;
+  --color-30: #87a922;
+  --color-10: #fcdc2a;
+  --color-font: #f7f6bb;
+}
+
+body {
+  color: var(--color-font);
+  background-color: var(--color-60);
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: var(--color-30);
+  padding: 40px 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: 800;
+  box-shadow: 0 7px 20px var(--color-10);
+}
