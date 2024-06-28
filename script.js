@@ -33,7 +33,7 @@ function DisplayBooks(){
     title.textContent = `${book.title}`;
     author.textContent = `Author: ${book.author}`;
     pages.textContent = `Pages: ${book.pages}`;
-    read.textContent = `Status: ${book.read ? "Finished":""}`;
+    read.textContent = `Status: ${book.read ? "Finished":"Not finish"}`;
 
     card.append(title);
     card.append(author);
