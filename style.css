@@ -11,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  height: 200vh;
 }
 
 header {
@@ -40,7 +41,8 @@ header {
   flex-direction: column;
 }
 
-.card:hover {
+.card:hover,
+.addBook:hover {
   box-shadow: 3px 3px 3px var(--color-10);
 }
 
@@ -52,4 +54,17 @@ header {
 
 .card > p {
   margin: 3px;
+}
+
+.addBook {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  margin: 20px 50px 20px 20px;
+  border-radius: 20px;
+  color: var(--color-font);
+  background-color: var(--color-30);
+  border: none;
 }
