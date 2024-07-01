@@ -44,4 +44,17 @@ function DisplayBooks(){
 }); 
 }
 
+/*button listener*/
+const dialog = document.querySelector("dialog");
+const openDialog = document.querySelector("dialog + .addBook");
+const closeDialog = document.querySelector("dialog .closeDialog");
+
+openDialog.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+closeDialog.addEventListener("click", () => {
+    dialog.close();
+});
+
 DisplayBooks();
