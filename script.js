@@ -25,6 +25,8 @@ function DisplayBooks(book){
     const card = document.createElement("div");
     card.className = `card`;
 
+    const closeCard = document.createElement("button");
+    closeCard.className = "closeCard";
     const title = document.createElement("h2");
     const author = document.createElement("p");
     const pages = document.createElement("p");
@@ -32,6 +34,7 @@ function DisplayBooks(book){
     const readUpdate = document.createElement("button");
     readUpdate.className = "readUpdate";
 
+    closeCard.textContent = "X";
     title.textContent = `${book.title}`;
     author.textContent = `Author: ${book.author}`;
     pages.textContent = `Pages: ${book.pages}`;
@@ -51,6 +54,7 @@ function DisplayBooks(book){
         }
     });
 
+    card.append(closeCard);
     card.append(title);
     card.append(author);
     card.append(pages);

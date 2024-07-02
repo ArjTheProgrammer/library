@@ -47,6 +47,7 @@ header {
 
 .card > h2 {
   height: min(80px);
+  width: min(250px);
   align-self: center;
   margin: 10px 0 10px 0;
 }
@@ -63,6 +64,20 @@ header {
   background-color: var(--color-10);
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.card > .closeCard {
+  position: fixed;
+  align-self: flex-end;
+  color: var(--color-60);
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.card > .closeCard:hover {
+  font-size: 1.3rem;
 }
 
 .addBook {
