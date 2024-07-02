@@ -29,16 +29,33 @@ function DisplayBooks(book){
     const author = document.createElement("p");
     const pages = document.createElement("p");
     const read = document.createElement("p");
+    const readUpdate = document.createElement("button");
+    readUpdate.className = "readUpdate";
 
     title.textContent = `${book.title}`;
     author.textContent = `Author: ${book.author}`;
     pages.textContent = `Pages: ${book.pages}`;
-    read.textContent = `Status: ${book.read ? "Finished":"Not finish"}`;
+    read.textContent = `Status: ${book.read ? "Finished":"Not finished"}`;
+    readUpdate.textContent = `${book.read ? "not finished":"finished"}`
+    
+    readUpdate.addEventListener("click", () => {
+        if (book.read === true){
+            read.textContent = `Status: not yet finished`;
+            readUpdate.textContent = "Finished";
+            book.read = false;
+        }
+        else {
+            read.textContent = `Status: finished`;
+            readUpdate.textContent = "Not yet finished";
+            book.read = true;
+        }
+    });
 
     card.append(title);
     card.append(author);
     card.append(pages);
     card.append(read);
+    card.append(readUpdate);
 
     container.appendChild(card);
 }

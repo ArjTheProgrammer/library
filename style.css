@@ -55,6 +55,16 @@ header {
   margin: 3px;
 }
 
+.card > .readUpdate {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color-10);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .addBook {
   position: fixed;
   bottom: 0;
