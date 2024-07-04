@@ -95,15 +95,19 @@ openDialog.addEventListener("click", () => {
 closeDialog.addEventListener("click", (e) => {
         e.preventDefault();
         console.log(myLibrary);
+        clearContent();
         dialog.close();
 });
 
-confirmButton.addEventListener("click", () => {
+confirmButton.addEventListener("click", (e) => {
     if(!isEmpty()){
+        e.preventDefault();
         console.log(`${title.value} ${author.value} ${pages.value} ${read.checked ? true:false}`); 
         addBookToLibrary(title.value, author.value, pages.value, read.checked ? true:false);
         DisplayBooks(myLibrary[myLibrary.length - 1]);
         console.log(myLibrary);
+        dialog.close();
+        clearContent();
     }
 });
 
@@ -111,4 +115,10 @@ function isEmpty() {
     if (title.value == "" || author.value == "" || pages.value == ""){
         return true;
     }
+}
+
+function clearContent(){
+    contents.forEach(content => {
+        content.value = "";
+    });
 }
