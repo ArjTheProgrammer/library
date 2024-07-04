@@ -54,6 +54,17 @@ function DisplayBooks(book){
         }
     });
 
+    closeCard.addEventListener("click", () => {
+        if(myLibrary.includes(book)){
+            let bookIndex = myLibrary.findIndex((storedBook) => {
+                return storedBook === book;
+            });
+            myLibrary.splice(bookIndex, 1);
+        }
+        card.remove();
+        console.log(myLibrary);
+    })
+
     card.append(closeCard);
     card.append(title);
     card.append(author);
@@ -88,4 +99,4 @@ confirmButton.addEventListener("click", () => {
     console.log(`${title.value} ${author.value} ${pages.value} ${read.checked ? true:false}`); 
     addBookToLibrary(title.value, author.value, pages.value, read.checked ? true:false);
     DisplayBooks(myLibrary[myLibrary.length - 1]);
-})
+});
