@@ -35,7 +35,7 @@ const myLibrary = [];
 
 ### Adding Books Dynamically
 
-To allow users to add books, I implemented the `addBookToLibrary` function. This function prompts the user for book details and creates a new `Book` object. It then pushes that book into the `myLibrary` array. Here's the code snippet:
+To allow users to add books, I implemented the `addBookToLibrary` function. This function prompts the user for book details and creates a new `Book` object. It then pushes that book into the `myLibrary` array.
 
 ### Displaying Books
 
@@ -56,6 +56,7 @@ Lastly, I added a button to toggle the read status of each book. The function th
 And there you have it—the Library app! Feel free to explore different ways to style it or enhance its functionality. Happy reading! 📖🌟
 
 By the way, if you’d like to see the live version, check it out here! 🌐
-<a url="https://arjtheprogrammer.github.io/library/"> Arj's Library</a>
+</br>
+[Arj's Library 📚](https://arjtheprogrammer.github.io/library/)
 
 ---
