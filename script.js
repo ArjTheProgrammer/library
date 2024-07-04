@@ -63,7 +63,7 @@ function DisplayBooks(book){
         }
         card.remove();
         console.log(myLibrary);
-    })
+    });
 
     card.append(closeCard);
     card.append(title);
@@ -86,17 +86,29 @@ const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 const read = document.querySelector("#read");
 
+const contents = [title, author, pages];
+
 openDialog.addEventListener("click", () => {
     dialog.showModal();
 });
 
 closeDialog.addEventListener("click", (e) => {
-    e.preventDefault();
-    dialog.close();
+        e.preventDefault();
+        console.log(myLibrary);
+        dialog.close();
 });
 
 confirmButton.addEventListener("click", () => {
-    console.log(`${title.value} ${author.value} ${pages.value} ${read.checked ? true:false}`); 
-    addBookToLibrary(title.value, author.value, pages.value, read.checked ? true:false);
-    DisplayBooks(myLibrary[myLibrary.length - 1]);
+    if(!isEmpty()){
+        console.log(`${title.value} ${author.value} ${pages.value} ${read.checked ? true:false}`); 
+        addBookToLibrary(title.value, author.value, pages.value, read.checked ? true:false);
+        DisplayBooks(myLibrary[myLibrary.length - 1]);
+        console.log(myLibrary);
+    }
 });
+
+function isEmpty() {
+    if (title.value == "" || author.value == "" || pages.value == ""){
+        return true;
+    }
+}
