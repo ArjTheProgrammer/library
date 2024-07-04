@@ -1,8 +1,10 @@
 :root {
-  --color-60: #114232;
-  --color-30: #87a922;
-  --color-10: #fcdc2a;
-  --color-font: #f7f6bb;
+  --color-60: #feffd2;
+  --color-30: #ffeea9;
+  --color-10: #ffbf78;
+  --color-highlight: #ff7d29;
+  --color-button-highlight: hsla(24, 100%, 58%, 0.745);
+  --color-font: #252525;
 }
 
 body {
@@ -38,11 +40,13 @@ header {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  border: solid var(--color-10) 2px;
 }
 
 .card:hover,
 .addBook:hover {
-  box-shadow: 3px 3px 3px var(--color-10);
+  background-color: var(--color-10);
+  box-shadow: 3px 5px 10px var(--color-10);
 }
 
 .card > h2 {
@@ -61,15 +65,19 @@ header {
   padding: 10px 20px;
   border-radius: 20px;
   border: none;
-  background-color: var(--color-10);
+  background-color: var(--color-highlight);
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.card > .readUpdate:hover {
+  background-color: var(--color-button-highlight);
 }
 
 .card > .closeCard {
   position: fixed;
   align-self: flex-end;
-  color: var(--color-60);
+  color: var(--color-highlight);
   font-size: 1.2rem;
   font-weight: 700;
   background-color: transparent;
@@ -90,12 +98,15 @@ header {
   border-radius: 20px;
   color: var(--color-font);
   background-color: var(--color-30);
-  border: none;
+  border: solid var(--color-10) 2px;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
 dialog {
   border: 0;
   border-radius: 20px;
+  background-color: var(--color-30);
 }
 
 ::backdrop {
@@ -118,4 +129,42 @@ form > button {
   right: 0;
   margin: 10px;
   border-radius: 10px;
+}
+
+form > input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: solid var(--color-10) 1px;
+  font-size: 1.2rem;
+}
+
+form > input:focus {
+  background-color: var(--color-10);
+}
+
+form > input[type="submit"] {
+  background-color: var(--color-highlight);
+  justify-self: center;
+  padding: 0;
+  width: 350px;
+}
+
+form > input[type="submit"]:hover {
+  background-color: var(--color-button-highlight);
+}
+
+form > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+form > div > input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+form > div > input[type="checkbox"]:checked {
+  accent-color: var(--color-highlight);
 }
